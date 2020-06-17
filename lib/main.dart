@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 const Color fontMainColor = Color(0xff293038);
 const Color fontSecondColor = Color(0xff696e74);
-const Color bicycleAppColor = Color(0xffffc329);
+const Color bicycleAppColor = Color(0xff696e12);
 
-class BicycleRentalApp extends StatelessWidget {
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +34,7 @@ class _BicycleRentalMainPageState extends State<BicycleRentalMainPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 200,
+                height: 100,
                 child: Stack(
                   children: [
                     Positioned(
@@ -42,19 +44,6 @@ class _BicycleRentalMainPageState extends State<BicycleRentalMainPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text.rich(TextSpan(children: [
-                              TextSpan(
-                                  text: "Hi, ",
-                                  style: TextStyle(
-                                      color: fontSecondColor, fontSize: 18)),
-                              TextSpan(
-                                  text: "Dreamwalker",
-                                  style: TextStyle(
-                                      color: fontMainColor, fontSize: 18)),
-                            ])),
-                            SizedBox(
-                              height: 24,
-                            ),
                             Text.rich(TextSpan(children: [
                               TextSpan(
                                   text: "Select ",
@@ -79,72 +68,10 @@ class _BicycleRentalMainPageState extends State<BicycleRentalMainPage> {
                                   style: TextStyle(
                                       color: fontSecondColor, fontSize: 22)),
                             ])),
-                            SizedBox(
-                              height: 24,
-                            ),
-                            Container(
-                                height: 48,
-                                width: MediaQuery.of(context).size.width - 32,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8)),
-                                padding: EdgeInsets.symmetric(horizontal: 16),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.search),
-                                    Expanded(
-                                        child: TextField(
-                                      decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          hintText:
-                                              "Where do you want to go biking?"),
-                                    )),
-                                    Container(
-                                      height: 38,
-                                      width: 38,
-                                      decoration: BoxDecoration(
-                                          color: bicycleAppColor,
-                                          borderRadius:
-                                              BorderRadius.circular(8)),
-                                      child: Center(
-                                        child: Icon(Icons.map),
-                                      ),
-                                    )
-                                  ],
-                                ))
                           ],
                         ),
                       ),
                     ),
-                    Positioned(
-                      right: -2,
-                      top: -2,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: bicycleAppColor),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Center(
-                          child: Container(
-                            height: 38,
-                            width: 38,
-                            decoration: BoxDecoration(
-                                border: Border.all(color: bicycleAppColor),
-                                borderRadius: BorderRadius.circular(8),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: bicycleAppColor.withOpacity(0.2),
-                                      blurRadius: 4,
-                                      spreadRadius: -4,
-                                      offset: Offset(0, 16))
-                                ]),
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
